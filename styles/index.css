@@ -1,0 +1,204 @@
+
+/* 
+   using root since this assignment will also be used on the 
+   contact page my of group project and there are certain style 
+   choices that we might want to change as a group.
+*/
+
+:root {
+    /* --- Pink Colors --- */
+    --main-color: #bd7482;
+    --darklightpink-color: #d8b4b7;
+    --lightpink-color: #EED4D6;
+    --whitepink-color: #F6EEEF;
+
+    /* --- Green Colors --- */
+    --darklightgreen-color: #73986F;
+    --lightgreen-color: #ACB9A6;
+
+    /* --- Fonts --- */
+    --font-main: "roboto", sans-serif;
+}
+
+body{
+    font-family: var(--font-main);
+    font-weight: 900;
+    color: var(--lightpink-color);
+}
+
+.contact-form{
+    /* --- Background --- */
+    background-image: url(../images/green-headphones-unsplash-cropped.jpg);
+    background-color: var(--lightgreen-color); 
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 1183px 934px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 60px;
+}
+
+.form-box{
+    /* --- Container --- */
+    background-color: var(--main-color);
+    width: 505px; 
+    height: 910px;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+input{
+    background-color: var(--whitepink-color);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+textarea{
+    background-color: var(--whitepink-color);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+input::placeholder{
+    color: var(--darklightpink-color);
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+textarea::placeholder{
+    color: var(--darklightpink-color);
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+select{
+    background-color: var(--whitepink-color);
+    color: var(--darklightpink-color);
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 10px;
+
+    appearance: none;
+    background-image: url(../images/angle-down-solid-full.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 25px 25px;
+}
+
+select:focus{
+    outline-color: var(--darklightpink-color);
+}
+
+form input:hover, 
+form textarea:hover, 
+form select:hover{
+    background-color: white;
+}
+
+form input,
+form textarea{
+    cursor: text;
+}
+
+/* --- Checkboxes --- */
+
+.form-content--checkbox{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* the text went outside the cointainer so this was the solve that Claude suggested*/
+.form-content--checkbox label{
+    flex: 1;
+    min-width: 0;
+}
+
+
+ .checkbox{
+    opacity: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    z-index: 2;
+    left: 0;
+}
+
+.checkmark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/square-solid-full.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    left: 0;
+}
+
+.checkbox:checked + .checkmark{
+    background-image: url(../images/square-check-solid-full.svg);
+}
+
+
+a{
+    color: var(--whitepink-color);
+}
+
+a:visited{
+    color: var(--lightpink-color);
+}
+
+a:hover{
+    color: var(--lightgreen-color);
+}
+
+/* --- Button --- */
+button{
+    background-color: var(--darklightgreen-color);
+    color: var(--lightpink-color);
+    font-weight: 800;
+    border: none;
+    border-radius: 40px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+button:hover{
+    background-color: darkolivegreen;
+    color: white;
+}
