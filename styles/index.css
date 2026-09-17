@@ -28,16 +28,27 @@ body{
 
 .contact-form{
     /* --- Background --- */
-    background-image: url(../images/green-headphones-unsplash-cropped.jpg);
     background-color: var(--lightgreen-color); 
-    background-position: bottom left;
-    background-repeat: no-repeat;
-    background-size: 1183px 934px;
     min-height: 100vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-right: 60px;
+}
+
+.contact-form__bg{
+    width: 875px;
+    height: 934px;
+    padding-right: 150px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.contact-form__bg img{
+    /* --- Background Image --- */
+    width:875px ;
+    height: 934px;
+    object-fit: cover;
 }
 
 .form-box{
@@ -46,10 +57,13 @@ body{
     width: 505px; 
     height: 910px;
     border-radius: 80px;
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
 form{
@@ -64,35 +78,30 @@ form{
     gap: 10px;
 }
 
-
-
 input{
     background-color: var(--whitepink-color);
     border: none;
     border-radius: 20px;
-    padding: 10px;
+    padding: 15px 15px 15px 15px;
 }
 
 textarea{
     background-color: var(--whitepink-color);
     border: none;
     border-radius: 20px;
-    padding: 10px;
+    padding: 15px 15px 15px 15px;
 }
 
 input::placeholder{
     color: var(--darklightpink-color);
     font-size: 15px;
     font-weight: 500;
-    padding-left: 10px;
 }
 
 textarea::placeholder{
     color: var(--darklightpink-color);
     font-size: 15px;
     font-weight: 500;
-    padding-top: 10px;
-    padding-left: 10px;
 }
 
 select{
@@ -112,8 +121,11 @@ select{
     background-size: 25px 25px;
 }
 
+textarea:focus,
+input:focus,
 select:focus{
-    outline-color: var(--darklightpink-color);
+    outline: 2px solid var(--darklightpink-color);
+    outline-offset: -5px; /* for the outline to have some padding inside the boc*/
 }
 
 form input:hover, 
@@ -142,7 +154,6 @@ form textarea{
     flex: 1;
     min-width: 0;
 }
-
 
  .checkbox{
     opacity: 0;
